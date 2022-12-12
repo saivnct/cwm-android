@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package grpcCWMPb;
+
+import "grpc/cwm-rq-res-account.proto";
+import "grpc/cwm-rq-res-thread.proto";
+import "grpc/cwm-rq-res-msg.proto";
+
+service CWMService{
+  //User APIs
+  rpc CreatUser (CreatAccountRequest) returns (CreatAccountResponse);
+  rpc VerifyAuthencode (VerifyAuthencodeRequest) returns (VerifyAuthencodeResponse);
+  rpc Login (LoginRequest) returns (LoginResponse);
+  rpc SyncContact(stream SyncContactRequest) returns (stream SyncContactResponse){};  //Bi-directional streaming
+  rpc UpdateProfile (UpdateProfileRequest) returns (UpdateProfileResponse);
+  rpc UpdateUsername (UpdateUsernameRequest) returns (UpdateUsernameResponse);
+  rpc SearchByUsername (SearchByUsernameRequest) returns (SearchByUsernameResponse);
+  rpc SearchByPhoneFull (SearchByPhoneFullRequest) returns (SearchByPhoneFullResponse);
+  rpc FindByListPhoneFull (FindByListPhoneFullRequest) returns (FindByListPhoneFullResponse);
+  rpc UpdatePushToken (UpdatePushTokenRequest) returns (UpdatePushTokenResponse);
+
+  //Thread APIs
+  rpc CreateGroupThread (CreateGroupThreadRequest) returns (CreateGroupThreadResponse);
+  rpc CheckGroupThreadInfo (CheckGroupThreadInfoRequest) returns (CheckGroupThreadInfoResponse);
+  rpc ChangeGroupThreadName (ChangeGroupThreadNameRequest) returns (ChangeGroupThreadNameResponse);
+  rpc AddGroupThreadParticipant (AddGroupThreadParticipantRequest) returns (AddGroupThreadParticipantResponse);
+  rpc RemoveGroupThreadParticipant (RemoveGroupThreadParticipantRequest) returns (RemoveGroupThreadParticipantResponse);
+  rpc PromoteGroupThreadAdmin (PromoteGroupThreadAdminRequest) returns (PromoteGroupThreadAdminResponse);
+  rpc RevokeGroupThreadAdmin (RevokeGroupThreadAdminRequest) returns (RevokeGroupThreadAdminResponse);
+  rpc LeaveGroupThread (LeaveGroupThreadRequest) returns (LeaveGroupThreadResponse);
+  rpc DeleteAndLeaveGroupThread (DeleteAndLeaveGroupThreadRequest) returns (DeleteAndLeaveGroupThreadResponse);
+
+  //Msg APIs
+  rpc InitialSyncMsg(InitialSyncMsgRequest) returns (stream InitialSyncMsgResponse){}; //server streaming
+  rpc FetchAllUnreceivedMsg(FetchAllUnreceivedMsgRequest) returns (stream FetchAllUnreceivedMsgResponse){}; //server streaming
+  rpc FetchOldMsgOfThread(FetchOldMsgOfThreadRequest) returns (stream FetchOldMsgOfThreadResponse){}; //server streaming
+  rpc SendMsg (SendMsgRequest) returns (SendMsgResponse);
+  rpc ConfirmReceivedMsgs (ConfirmReceivedMsgsRequest) returns (ConfirmReceivedMsgsResponse);
+  rpc DeleteMsgsOfThread (DeleteMsgsOfThreadRequest) returns (DeleteMsgsOfThreadResponse);
+  rpc ClearAllMsgOfThread (ClearAllMsgOfThreadRequest) returns (ClearAllMsgOfThreadResponse);
+  rpc DeleteSoloThread (DeleteSoloThreadRequest) returns (DeleteSoloThreadResponse);
+  rpc UploadMediaMsg(stream UploadMediaMsgRequest) returns (UploadMediaMsgResponse) {}; //client streaming
+  rpc DownloadMediaMsg(DownloadMediaMsgRequest) returns (stream DownloadMediaMsgResponse) {}; //server streaming
+
+}

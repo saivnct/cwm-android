@@ -1,0 +1,552 @@
+<resources>
+    <string name="app_name">cwm-adndroid</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Username</string>
+    <string name="nav_header_subtitle">Phone number</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="navtitle_dashboard">Dashboard</string>
+    <string name="navtitle_chat">Chat</string>
+    <string name="navtitle_log">Log</string>
+
+    <string name="log_out">Log out</string>
+    <string name="log_out_confirm">Are you sure you want to log out this account?</string>
+
+    <string name="btn_yes">Yes</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_confirm">Confirm</string>
+    <string name="btn_continute">Continue</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_submit">Submit</string>
+    <string name="btn_send">Send</string>
+    <string name="btn_logout">Log out</string>
+    <string name="btn_close">Close</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_add">Add</string>
+    <string name="btn_search">Search</string>
+    <string name="btn_clear_history">Clear History</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="delete">Delete</string>
+    <string name="please_wait">Please wait…</string>
+    <string name="save">Save</string>
+
+    <string name="popup_delete_chat_group_tilte">Leave Group</string>
+    <string name="popup_delete_chat_tilte">Delete Chat</string>
+    <string name="popup_delete_multiple_chats_tilte">Delete %d Chat</string>
+    <string name="popup_delete_chat_group_msg">Are you sure want to delete and leave the group "%s"?</string>
+    <string name="popup_delete_chat_msg">Are you sure want to delete this chat?</string>
+    <string name="popup_delete_multiple_chats_msg">Are you sure want to delete these chat?</string>
+
+
+    <string name="popup_clear_chat_tilte">Clear Chat</string>
+    <string name="popup_clear_multiple_chats_tilte">Clear %d Chat</string>
+    <string name="popup_clear_chat_group_msg">Are you sure want to clear the chat history in "%s"?</string>
+    <string name="popup_clear_chat_msg">Are you sure want to clear the chat history?</string>
+    <string name="popup_clear_multiple_chats_msg">Are you sure want to clear history in these chat?</string>
+
+
+    <string name="popup_delete_msg_tilte">Delete message</string>
+    <string name="popup_delete_multiple_msgss_tilte">Delete %d messages</string>
+    <string name="popup_delete_msg_body">Are you sure want to delete this message?</string>
+    <string name="popup_delete_multiple_msgss_body">Are you sure want to delete these messages?</string>
+
+    <string name="invalid_country_code">Invalid country code</string>
+    <string name="invalid_phone_number">Invalid phone number</string>
+
+    <string name="notification_default_channel_id">cwm_channel_default</string>
+    <string name="notification_default_channel_name">cwm_channel_default</string>
+    <string name="notification_default_channel_description">cwm default channel</string>
+
+    <string name="notification_channel_chat_id">cwm_channel_chat</string>
+    <string name="notification_channel_chat_name">cwm_channel_chat</string>
+    <string name="notification_channel_chat_description">cwm chat channel</string>
+
+    <string name="notification_channel_chat_summary_id">cwm_channel_chat_summary</string>
+    <string name="notification_channel_chat_summary_name">cwm_channel_chat_summary</string>
+    <string name="notification_channel_chat_summary_description">cwm chat summary channel</string>
+
+    <string name="notification_channel_worker_id">cwm_channel_worker</string>
+    <string name="notification_channel_worker_name">cwm_channel_worker</string>
+    <string name="notification_channel_worker_description">cwm worker channel</string>
+
+    <string name="notification_detail_text">%d new messages</string>
+    <string name="notification_detail_text_multi_threads">%d new messages from %d chats</string>
+
+    <string name="notification_mark_as_read">Mark as read</string>
+    <string name="notification_reply">Reply</string>
+
+
+    <!--    Register-->
+    <string name="RegisterFragment_enter_your_phone_number_to_get_started">Enter your phone number to get started</string>
+    <string name="RegisterFragment_enter_your_phone_number">Enter your phone number</string>
+    <string name="RegisterFragment_button_register">Register</string>
+    <string name="RegisterFragment_you_will_receive_a_verification_code">You will receive a verification code. Carrier rates may apply.</string>
+    <string name="RegistrationActivity_enter_the_code_we_sent_to_s">Enter the code we sent to %s</string>
+
+    <!--    New Conversation-->
+    <string name="NewConversationFragment_title">New conversation</string>
+
+    <!-- conversation_item_sent -->
+    <string name="conversation_item_sent__send_failed_indicator_description">Send Failed</string>
+    <string name="conversation_item_sent__pending_approval_description">Pending Approval</string>
+    <string name="conversation_item_sent__delivered_description">Delivered</string>
+    <string name="conversation_item_sent__message_read">Message read</string>
+    <string name="ConversationItem_copied_text">Copied %s</string>
+
+    <!-- DateUtils -->
+    <string name="DateUtils_just_now">Now</string>
+    <string name="DateUtils_minutes_ago">%dm</string>
+    <string name="DateUtils_today">Today</string>
+    <string name="DateUtils_yesterday">Yesterday</string>
+
+    <!-- Registration -->
+    <string name="RegisterFragment_call">Call</string>
+    <string name="RegisterFragment_wrong_number">Wrong number</string>
+    <string name="RegisterFragment_call_me_instead_available_in">Call me instead \n (Available in %1$02d:%2$02d)</string>
+
+
+    <!-- IM TYPE CONTENT-->
+    <string name="im_type_content_contact">[Contact]</string>
+    <string name="im_type_content_emoticon">[Sticker]</string>
+    <string name="im_type_content_url">[Url]</string>
+    <string name="im_type_content_multi_media">[MultiMedia]</string>
+    <string name="im_type_content_img">[Image]</string>
+    <string name="im_type_content_audio">[Audio]</string>
+    <string name="im_type_content_video">[Video]</string>
+    <string name="im_type_content_doc">[Document]</string>
+    <string name="im_type_content_file">[File]</string>
+    <string name="im_type_content_group_thread_notification">Group Updated</string>
+
+
+    <string name="you">You</string>
+
+    <string name="group_thread_notification_created">%s created group</string>
+    <string name="group_thread_notification_left">%s left group</string>
+    <string name="group_thread_notification_add_new_users">%s added %s to group</string>
+    <string name="group_thread_notification_remove_user">%s removed %s from group</string>
+    <string name="group_thread_notification_promote_admin">%s promoted %s to group admin</string>
+    <string name="group_thread_notification_revoke_admin">%s revoked group admin from %s</string>
+    <string name="group_thread_notification_change_groupname">%s changed group\'s name to %s</string>
+
+
+    <string name="thread_title_participants">%d participants</string>
+    <string name="thread_title_user_typing">%s is typing...</string>
+    <string name="thread_Me">Me</string>
+
+    <!-- LearnMoreTextView -->
+    <string name="LearnMoreTextView_learn_more">Learn more</string>
+
+    <string name="SpanUtil__read_more">Read more</string>
+
+<!--    Preferences-->
+    <string name="preferences__none">None</string>
+
+    <!-- CommunicationActions -->
+    <string name="CommunicationActions_no_browser_found">No web browser found.</string>
+    <string name="CommunicationActions_send_email">Send email</string>
+
+    <!-- BottomActionBar -->
+    <string name="BottomActionBar_more">More</string>
+
+    <!-- conversation_selection -->
+    <!-- Button to view detailed information for a message -->
+    <string name="conversation_selection__menu_message_details">Info</string>
+    <!-- Button to copy a message\'s text to the clipboard -->
+    <string name="conversation_selection__menu_copy">Copy</string>
+    <!-- Button to delete a message -->
+    <string name="conversation_selection__menu_delete">Delete</string>
+    <!-- Button to forward a message to another person or group chat -->
+    <string name="conversation_selection__menu_forward">Forward</string>
+    <!-- Button to reply to a message -->
+    <string name="conversation_selection__menu_reply">Reply</string>
+    <!-- Button to save a message attachment (image, file etc.) -->
+    <string name="conversation_selection__menu_save">Save</string>
+    <!-- Button to retry sending a message -->
+    <string name="conversation_selection__menu_resend_message">Resend</string>
+    <!-- Button to select a message and enter selection mode -->
+    <string name="conversation_selection__menu_multi_select">Select</string>
+
+
+<!--    Conversation List-->
+    <string name="ConversationListFragment_select_all">Select all</string>
+    <plurals name="ConversationListFragment_s_selected">
+        <item quantity="one">%d selected</item>
+        <item quantity="other">%d selected</item>
+    </plurals>
+
+    <!-- conversation_item -->
+    <string name="conversation_item__mms_image_description">Media message</string>
+    <string name="conversation_item__secure_message_description">Secure message</string>
+    <string name="ConversationItem_unable_to_open_media">Can\'t find an app able to open this media.</string>
+
+    <!-- ThumbnailView -->
+    <string name="ThumbnailView_Play_video_description">Play video</string>
+    <string name="ThumbnailView_Has_a_caption_description">Has a caption</string>
+
+    <!-- TransferControlView -->
+    <plurals name="TransferControlView_n_items">
+        <item quantity="one">%d Item</item>
+        <item quantity="other">%d Items</item>
+    </plurals>
+
+    <!-- AlbumThumbnailView -->
+    <string name="AlbumThumbnailView_plus" translatable="false">\+%d</string>
+
+    <!-- AudioView -->
+    <string name="AudioView_duration" translatable="false">%1$d:%2$02d</string>
+
+    <!-- Slide -->
+    <string name="Slide_image">Image</string>
+    <string name="Slide_sticker">Sticker</string>
+    <string name="Slide_audio">Audio</string>
+    <string name="Slide_video">Video</string>
+
+    <!-- AttachmentKeyboard -->
+    <string name="AttachmentKeyboard_camera">Camera</string>
+    <string name="AttachmentKeyboard_gallery">Gallery</string>
+    <string name="AttachmentKeyboard_file">File</string>
+    <string name="AttachmentKeyboard_contact">Contact</string>
+    <string name="AttachmentKeyboard_location">Location</string>
+    <string name="AttachmentKeyboard_we_needs_permission_to_show_your_photos_and_videos">We need permission to show your photos and videos.</string>
+    <string name="AttachmentKeyboard_give_access">Give Access</string>
+    <string name="AttachmentKeyboard_payment">Payment</string>
+
+    <!-- StorageUtil -->
+    <string name="StorageUtil__s_s">%1$s/%2$s</string>
+    <string name="BlockedUsersActivity__s_has_been_blocked">\"%1$s\" has been blocked.</string>
+    <string name="BlockedUsersActivity__failed_to_block_s">Failed to block \"%1$s\"</string>
+    <string name="BlockedUsersActivity__s_has_been_unblocked">\"%1$s\" has been unblocked.</string>
+
+    <!--    Permissions-->
+    <string name="Permissions_permission_required">Permission required</string>
+    <string name="Permissions_continue">Continue</string>
+    <string name="Permissions_not_now">Not now</string>
+
+    <!-- AttachmentManager -->
+    <string name="AttachmentManager_cant_open_media_selection">Can\'t find an app to select media.</string>
+    <string name="AttachmentManager_application_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">Application requires the Storage permission in order to attach photos, videos, or audio, but it has been permanently denied. Please continue to the app settings menu, select \"Permissions\", and enable \"Storage\".</string>
+    <string name="AttachmentManager_application_requires_contacts_permission_in_order_to_attach_contact_information">Application requires Contacts permission in order to attach contact information, but it has been permanently denied. Please continue to the app settings menu, select \"Permissions\", and enable \"Contacts\".</string>
+    <string name="AttachmentManager_application_requires_location_information_in_order_to_attach_a_location">Application requires Location permission in order to attach a location, but it has been permanently denied. Please continue to the app settings menu, select \"Permissions\", and enable \"Location\".</string>
+
+    <string name="ConversationActivity_to_send_audio_messages_allow_application_access_to_your_microphone">To send audio messages, allow application access to your microphone.</string>
+    <string name="ConversationActivity_application_requires_the_microphone_permission_in_order_to_send_audio_messages">Application requires the Microphone permission in order to send audio messages, but it has been permanently denied. Please continue to app settings, select \"Permissions\", and enable \"Microphone\".</string>
+    <string name="ConversationActivity_application_needs_the_microphone_and_camera_permissions_in_order_to_call_s">Application needs the Microphone and Camera permissions in order to call %s, but they have been permanently denied. Please continue to app settings, select \"Permissions\", and enable \"Microphone\" and \"Camera\".</string>
+    <string name="ConversationActivity_to_capture_photos_and_video_allow_application_access_to_the_camera">To capture photos and video, allow application access to the camera.</string>
+    <string name="ConversationActivity_application_needs_the_camera_permission_to_take_photos_or_video">Application needs the Camera permission to take photos or video, but it has been permanently denied. Please continue to app settings, select \"Permissions\", and enable \"Camera\".</string>
+    <string name="ConversationActivity_application_needs_camera_permissions_to_take_photos_or_video">Application needs Camera permissions to take photos or video</string>
+    <string name="ConversationActivity_enable_the_microphone_permission_to_capture_videos_with_sound">Enable the microphone permission to capture videos with sound.</string>
+    <string name="ConversationActivity_application_needs_the_recording_permissions_to_capture_video">Application needs microphone permissions to record videos, but they have been denied. Please continue to app settings, select \"Permissions\", and enable \"Microphone\" and \"Camera\".</string>
+    <string name="ConversationActivity_application_needs_recording_permissions_to_capture_video">Application needs microphone permissions to record videos.</string>
+
+    <string name="conversation_activity__quick_attachment_drawer_record_and_send_audio_description">Record and send audio attachment</string>
+    <string name="conversation_activity__quick_attachment_drawer_lock_record_description">Lock recording of audio attachment</string>
+
+    <!-- conversation_input_panel -->
+    <string name="conversation_input_panel__slide_to_cancel">Slide to cancel</string>
+    <string name="conversation_input_panel__cancel">Cancel</string>
+
+    <!-- audio_view -->
+    <string name="audio_view__play_pause_accessibility_description">Play … Pause</string>
+    <string name="audio_view__download_accessibility_description">Download</string>
+
+    <string name="InputPanel_tap_and_hold_to_record_a_voice_message_release_to_send">Tap and hold to record a voice message, release to send</string>
+    <string name="ConversationActivity_unable_to_record_audio">Unable to record audio!</string>
+
+    <string name="ConversationActivity_to_send_audio_messages_allow_app_access_to_your_microphone">To send audio messages, allow application access to your microphone.</string>
+    <string name="ConversationActivity_app_requires_the_microphone_permission_in_order_to_send_audio_messages">Application requires the Microphone permission in order to send audio messages, but it has been permanently denied. Please continue to app settings, select \"Permissions\", and enable \"Microphone\".</string>
+
+    <!-- media_preview -->
+    <string name="media_preview__save_title">Save</string>
+    <string name="media_preview__forward_title">Forward</string>
+    <string name="media_preview__share_title">Share</string>
+    <string name="media_preview__all_media_title">All media</string>
+
+
+    <!-- VoiceNotePlaybackPreparer -->
+    <string name="VoiceNotePlaybackPreparer__failed_to_play_voice_message">Failed to play voice message</string>
+
+    <!-- VoiceNoteMediaDescriptionCompatFactory -->
+    <string name="VoiceNoteMediaItemFactory__voice_message">Voice message &#183; %1$s</string>
+    <string name="VoiceNoteMediaItemFactory__s_to_s">%1$s to %2$s</string>
+
+    <!-- PlaybackSpeedToggleTextView -->
+    <string name="PlaybackSpeedToggleTextView__p5x">.5x</string>
+    <string name="PlaybackSpeedToggleTextView__1x">1x</string>
+    <string name="PlaybackSpeedToggleTextView__1p5x">1.5x</string>
+    <string name="PlaybackSpeedToggleTextView__2x">2x</string>
+
+    <!-- VoiceNotePlayerView -->
+    <string name="VoiceNotePlayerView__dot_s">· %1$s</string>
+    <string name="VoiceNotePlayerView__stop_voice_message">Stop voice message</string>
+    <string name="VoiceNotePlayerView__change_voice_message_speed">Change voice message speed</string>
+    <string name="VoiceNotePlayerView__pause_voice_message">Pause voice message</string>
+    <string name="VoiceNotePlayerView__play_voice_message">Play voice message</string>
+    <string name="VoiceNotePlayerView__navigate_to_voice_message">Navigate to voice message</string>
+
+    <!-- AppSettingsFragment -->
+    <string name="AppSettingsFragment__account">Account</string>
+    <string name="AppSettingsFragment__linked_devices">Linked Devices</string>
+    <string name="AppSettingsFragment__appearance">Appearance</string>
+    <string name="AppSettingsFragment__chat_settings">Chat Settings</string>
+    <string name="AppSettingsFragment__notifications">Notifications</string>
+    <string name="AppSettingsFragment__privacy_and_security">Privacy and Security</string>
+    <string name="AppSettingsFragment__data_and_storage">Data and storage</string>
+    <string name="AppSettingsFragment__help">Help</string>
+    <string name="AppSettingsFragment__invite_your_friends">Invite your friends</string>
+
+    <!-- Notification Channels -->
+    <string name="NotificationChannel_channel_messages">Messages</string>
+    <string name="NotificationChannel_calls">Calls</string>
+    <string name="NotificationChannel_failures">Failures</string>
+    <string name="NotificationChannel_backups">Backups</string>
+    <string name="NotificationChannel_locked_status">Lock status</string>
+    <string name="NotificationChannel_app_updates">App updates</string>
+    <string name="NotificationChannel_other">Other</string>
+    <string name="NotificationChannel_group_chats">Chats</string>
+    <string name="NotificationChannel_missing_display_name">Unknown</string>
+    <string name="NotificationChannel_voice_notes">Voice Notes</string>
+
+    <!-- QuoteView -->
+    <string name="QuoteView_audio">Audio</string>
+    <string name="QuoteView_video">Video</string>
+    <string name="QuoteView_photo">Photo</string>
+    <string name="QuoteView_gif">GIF</string>
+    <string name="QuoteView_view_once_media">View-once media</string>
+    <string name="QuoteView_sticker">Sticker</string>
+    <string name="QuoteView_you">You</string>
+    <string name="QuoteView_original_missing">Original message not found</string>
+
+    <string name="ConversationFragment_quoted_message_not_found">Original message not found</string>
+
+    <!-- LinkPreviewView -->
+    <string name="LinkPreviewView_no_link_preview_available">No link preview available</string>
+    <string name="LinkPreviewView_domain_date">%1$s · %2$s</string>
+
+    <string name="MultiselectForwardFragment__forward_to">Forward to</string>
+
+    <plurals name="MultiselectForwardFragment_messages_sent">
+        <item quantity="one">Message sent</item>
+        <item quantity="other">Messages sent</item>
+    </plurals>
+    <plurals name="MultiselectForwardFragment_messages_failed_to_send">
+        <item quantity="one">Message failed to send</item>
+        <item quantity="other">Messages failed to send</item>
+    </plurals>
+
+    <string-array name="CountryCodes">
+        <item>93,AF,00,0</item>
+        <item>355,AL,00,0</item>
+        <item>213,DZ,00,0</item>
+        <item>376,AD,00,</item>
+        <item>244,AO,00,0</item>
+        <item>672,AQ,00,0</item>
+        <item>54,AR,00,0</item>
+        <item>374,AM,00,0</item>
+        <item>297,AW,00,</item>
+        <item>61,AU,0011,0</item>
+        <item>43,AT,00,0</item>
+        <item>994,AZ,00,0</item>
+        <item>973,BH,00,</item>
+        <item>880,BD,00,0</item>
+        <item>375,BY,810,8</item>
+        <item>32,BE,00,0</item>
+        <item>501,BZ,00,</item>
+        <item>229,BJ,00,</item>
+        <item>975,BT,00,</item>
+        <item>591,BO,00,0</item>
+        <item>387,BA,00,0</item>
+        <item>267,BW,00,</item>
+        <item>55,BR,00,0</item>
+        <item>673,BN,00,</item>
+        <item>359,BG,00,0</item>
+        <item>226,BF,00,</item>
+        <item>95,MM,00,0</item>
+        <item>257,BI,00,</item>
+        <item>855,KH,001,0</item>
+        <item>237,CM,00,</item>
+        <item>1,CA,011,1</item>
+        <item>238,CV,00,</item>
+        <item>236,CF,00,</item>
+        <item>235,TD,00,</item>
+        <item>56,CL,1YZ0,1YZ</item>
+        <item>86,CN,00,0</item>
+        <item>61,CX,0011,0</item>
+        <item>61,CC,0011,0</item>
+        <item>57,CO,009,0</item>
+        <item>269,KM,00,</item>
+        <item>242,CG,00,</item>
+        <item>243,CD,00,0</item>
+        <item>682,CK,00,</item>
+        <item>506,CR,00,</item>
+        <item>385,HR,00,0</item>
+        <item>53,CU,119,0</item>
+        <item>357,CY,00,</item>
+        <item>420,CZ,00,</item>
+        <item>45,DK,00,</item>
+        <item>253,DJ,00,</item>
+        <item>670,TL,00,</item>
+        <item>593,EC,00,0</item>
+        <item>20,EG,00,0</item>
+        <item>503,SV,00,</item>
+        <item>240,GQ,00,</item>
+        <item>291,ER,00,0</item>
+        <item>372,EE,00,</item>
+        <item>251,ET,00,0</item>
+        <item>500,FK,00,</item>
+        <item>298,FO,00,</item>
+        <item>679,FJ,00,</item>
+        <item>358,FI,00,0</item>
+        <item>33,FR,00,0</item>
+        <item>689,PF,00,</item>
+        <item>241,GA,00,</item>
+        <item>220,GM,00,</item>
+        <item>995,GE,8,8</item>
+        <item>49,DE,00,0</item>
+        <item>233,GH,00,0</item>
+        <item>350,GI,00,</item>
+        <item>30,GR,00,0</item>
+        <item>299,GL,00,</item>
+        <item>502,GT,00,</item>
+        <item>224,GN,00,</item>
+        <item>245,GW,00,</item>
+        <item>592,GY,001,</item>
+        <item>509,HT,00,</item>
+        <item>504,HN,00,</item>
+        <item>852,HK,001,</item>
+        <item>36,HU,00,6</item>
+        <item>91,IN,00,0</item>
+        <item>62,ID,001,0</item>
+        <item>98,IR,00,0</item>
+        <item>964,IQ,00,0</item>
+        <item>353,IE,00,0</item>
+        <item>44,IM,00,0</item>
+        <item>972,IL,00,0</item>
+        <item>39,IT,00,</item>
+        <item>225,CI,00,</item>
+        <item>81,JP,10,0</item>
+        <item>962,JO,00,0</item>
+        <item>7,KZ,810,8</item>
+        <item>254,KE,00,0</item>
+        <item>686,KI,00,</item>
+        <item>965,KW,00,</item>
+        <item>996,KG,00,0</item>
+        <item>856,LA,00,0</item>
+        <item>371,LV,00,</item>
+        <item>961,LB,00,0</item>
+        <item>266,LS,00,</item>
+        <item>231,LR,00,</item>
+        <item>218,LY,00,0</item>
+        <item>423,LI,00,</item>
+        <item>370,LT,00,0</item>
+        <item>352,LU,00,</item>
+        <item>853,MO,00,</item>
+        <item>389,MK,00,0</item>
+        <item>261,MG,00,</item>
+        <item>265,MW,00,</item>
+        <item>60,MY,00,0</item>
+        <item>960,MV,00,</item>
+        <item>223,ML,00,</item>
+        <item>356,MT,00,</item>
+        <item>692,MH,011,1</item>
+        <item>222,MR,00,</item>
+        <item>230,MU,00,</item>
+        <item>262,YT,00,</item>
+        <item>52,MX,00,1</item>
+        <item>691,FM,011,1</item>
+        <item>373,MD,00,0</item>
+        <item>377,MC,00,</item>
+        <item>976,MN,001,0</item>
+        <item>382,ME,00,0</item>
+        <item>212,MA,00,0</item>
+        <item>258,MZ,00,</item>
+        <item>264,NA,00,0</item>
+        <item>674,NR,00,</item>
+        <item>977,NP,00,0</item>
+        <item>31,NL,00,0</item>
+        <item>599,AN,00,0</item>
+        <item>687,NC,00,</item>
+        <item>64,NZ,00,0</item>
+        <item>505,NI,00,</item>
+        <item>227,NE,00,</item>
+        <item>234,NG,009,0</item>
+        <item>683,NU,00,</item>
+        <item>850,KP,00,0</item>
+        <item>47,NO,00,</item>
+        <item>968,OM,00,</item>
+        <item>92,PK,00,0</item>
+        <item>680,PW,011,</item>
+        <item>507,PA,00,</item>
+        <item>675,PG,00,</item>
+        <item>595,PY,00,0</item>
+        <item>51,PE,00,0</item>
+        <item>63,PH,00,0</item>
+        <item>870,PN,00,</item>
+        <item>48,PL,00,0</item>
+        <item>351,PT,00,</item>
+        <item>1,PR,011,1</item>
+        <item>974,QA,00,</item>
+        <item>40,RO,00,0</item>
+        <item>7,RU,810,8</item>
+        <item>250,RW,00,</item>
+        <item>590,BL,00,</item>
+        <item>685,WS,00,</item>
+        <item>378,SM,00,</item>
+        <item>239,ST,00,</item>
+        <item>966,SA,00,0</item>
+        <item>221,SN,00,</item>
+        <item>381,RS,00,0</item>
+        <item>248,SC,00,</item>
+        <item>232,SL,00,0</item>
+        <item>65,SG,001,</item>
+        <item>421,SK,00,0</item>
+        <item>386,SI,00,0</item>
+        <item>677,SB,00,</item>
+        <item>252,SO,00,</item>
+        <item>27,ZA,00,0</item>
+        <item>82,KR,001,82</item>
+        <item>34,ES,00,</item>
+        <item>94,LK,00,0</item>
+        <item>290,SH,00,</item>
+        <item>508,PM,00,</item>
+        <item>249,SD,00,0</item>
+        <item>597,SR,00,0</item>
+        <item>268,SZ,00,</item>
+        <item>46,SE,00,0</item>
+        <item>41,CH,00,0</item>
+        <item>963,SY,00,0</item>
+        <item>886,TW,002,0</item>
+        <item>992,TJ,810,8</item>
+        <item>255,TZ,00,0</item>
+        <item>66,TH,001,0</item>
+        <item>228,TG,00,</item>
+        <item>690,TK,00,</item>
+        <item>676,TO,00,</item>
+        <item>216,TN,00,</item>
+        <item>90,TR,00,0</item>
+        <item>993,TM,810,8</item>
+        <item>688,TV,00,</item>
+        <item>971,AE,00,0</item>
+        <item>256,UG,00,0</item>
+        <item>44,GB,00,0</item>
+        <item>380,UA,00,0</item>
+        <item>598,UY,00,0</item>
+        <item>1,US,011,1</item>
+        <item>998,UZ,810,8</item>
+        <item>678,VU,00,</item>
+        <item>39,VA,00,</item>
+        <item>58,VE,00,0</item>
+        <item>84,VN,00,0</item>
+        <item>681,WF,00,</item>
+        <item>967,YE,00,0</item>
+        <item>260,ZM,00,0</item>
+        <item>263,ZW,00,0</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

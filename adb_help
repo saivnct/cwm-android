@@ -1,0 +1,38 @@
+1. STEP TO CHANGE EMULATOR HOSTNAME
+
+    cd $HOME/.android/avd
+      -> find avd name . Ex: Pixel_API_24
+
+    cd $HOME/Library/Android/sdk/tools
+    ./emulator -avd <avd_name> -writable-system
+
+    adb root
+    adb remount
+    adb pull /system/etc/hosts hosts
+        -> modify hosts
+    adb push hosts /system/etc/hosts
+
+    test:
+        adb shell
+        cat /etc/hosts
+
+2. Testing Doze mode
+    adb -s RF8R40MGVBE shell dumpsys deviceidle force-idle
+
+    adb -s RF8R40MGVBE shell dumpsys deviceidle unforce
+    adb -s RF8R40MGVBE shell dumpsys battery reset
+
+3. Testing your app with App Standby
+    adb -s RF8R40MGVBE shell dumpsys battery unplug
+    adb -s RF8R40MGVBE shell am set-inactive com.lgt.cwm true
+
+     adb -s RF8R40MGVBE shell am set-inactive com.lgt.cwm false
+     adb -s RF8R40MGVBE shell am get-inactive com.lgt.cwm
+
+
+logcat filter
+^(?!(FA|WM-SystemFgDispatcher|WM-Processor|WM-SystemFgDispatcher|MultiDex|zygote|ResourceType|OpenGLRenderer|DynamiteModule|EGL_emulation|eglCodecCommon|HostConnection|NetworkSecurityConfig|View|InputMethodManager|chatty|IInputConnectionWrapper|AssistStructure|InputEventReceiver|SelectionMetricsLogger|MSHandlerLifeCycle|InsetsSourceConsumer|InputTransport|InsetsController|IMM_LC|ConnectivityManager|MSHandlerLifeCycle|hw-ProcessState|DecorView|CompatibilityChangeReporter|Thumbnail|MediaBrowserCompat|MediaSessionCompat|ExoPlayerImpl|AudioWaveForm|skia|MediaMetadataRetrieverJNI|ReflectedParamUpdater|CCodec|Codec2Client|CCodecConfig|BufferPoolAccessor2.0|studio.deploy|gralloc|Gralloc3|Gralloc4|MSHandlerLifeCycle|SmartClipRemoteRequestDispatcher))
+^(?!(FA|WM|MultiDex|zygote|ResourceType|OpenGLRenderer|DynamiteModule|EGL_emulation|eglCodecCommon|HostConnection|NetworkSecurityConfig|View|InputMethodManager|chatty|IInputConnectionWrapper|AssistStructure|InputEventReceiver|SelectionMetricsLogger|MSHandlerLifeCycle|InsetsSourceConsumer|InputTransport|InsetsController|IMM_LC|ConnectivityManager|MSHandlerLifeCycle|hw-ProcessState|DecorView|CompatibilityChangeReporter|Thumbnail|MediaBrowserCompat|MediaSessionCompat|ExoPlayerImpl|AudioWaveForm|skia|MediaMetadataRetrieverJNI|ReflectedParamUpdater|CCodec|Codec2Client|CCodecConfig|BufferPoolAccessor2.0|studio.deploy|gralloc|Gralloc3|Gralloc4|MSHandlerLifeCycle|SmartClipRemoteRequestDispatcher))
+
+
+package:mine -tag:Dialog -tag:AbsListView -tag:ScrollView -tag:NotificationService -tag:InputTransport -tag:IMM_LC -tag:audit -tag:zygote -tag:ResourceType -tag:EGL_emulation -tag:studio.deploy -tag:System -tag:InsetsSourceConsumer -tag:com.lgt.cwm -tag:DynamiteDebugLogger -tag:installd -tag:WorkSourceUtil -tag:SPPClientService -tag:VerityUtils -tag:ActivityThread -tag:ziparchive -tag:LoadedApk -tag:NetworkSecurityConfig -tag:GraphicsEnvironment -tag:USNET -tag:ProcessState -tag:ResourceOverlayService_0 -tag:CompatibilityChangeReporter -tag:OpenGLRenderer -tag:MultiDex -tag:FA -tag:InputMethodManager -tag:[secipm] -tag:WindowManager -tag:ConnectivityManager -tag:MSHandlerLifeCycle -tag:DecorView -tag:DynamiteModule -tag~:ViewRootImpl* -tag~:[G,g]ralloc*

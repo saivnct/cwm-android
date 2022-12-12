@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package cwmSIPPb;
+
+
+enum REQUEST_METHOD {
+  METHOD_OPTIONS = 0;
+  METHOD_MESSAGE = 1;
+  METHOD_REGISTER = 2;
+  METHOD_INVITE = 3;
+  METHOD_CANCEL = 4;
+  METHOD_ACK = 5;
+  METHOD_BYE = 6;
+}
+
+
+message CWMRequestHeader {
+  REQUEST_METHOD method = 1;
+  string from = 2;
+  string fromSession = 3;
+  string fromFirstName = 4;
+  string fromLastName = 5;
+  string fromUserName = 6;
+  repeated string fromSessionsWhiteList = 7;  // Only apply for SOLO SignalMSg, if empty => all allow, if not empty => only session in this array can get message
+  string to = 8;
+  repeated string toSessionsWhiteList = 9;  // Only apply for SOLO SignalMSg, if empty => all allow, if not empty => only session in this array can get message
+}
+
+message CWMRequest {
+  CWMRequestHeader header = 1;
+  optional bytes content = 2;
+}
+
+
+message CWMResponse {
+  CWMRequestHeader header = 1;
+  int32 code = 2;
+  optional string message = 3;
+  optional bytes content = 4;
+}
+

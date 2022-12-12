@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lgt.cwm.ui.conversation.DocumentView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/document_view"
+    android:layout_width="210dp"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+    app:doc_captionColor="#545863"
+    app:doc_downloadButtonTint="@color/core_white"
+    app:doc_titleColor="#545863"
+    tools:visibility="visible" />

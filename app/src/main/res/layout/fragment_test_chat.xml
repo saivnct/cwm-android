@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+    <data>
+        <variable name="testChatFragmentViewModel" type="com.lgt.cwm.activity.testchat.fragments.chat.TestChatFragmentViewModel"/>
+
+        <variable
+            name="testChatViewAdapter"
+            type="com.lgt.cwm.activity.testchat.fragments.chat.adapter.TestChatViewAdapter" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <RelativeLayout
+            android:id="@+id/clDisableChat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:visible="@{!testChatFragmentViewModel.enableChatLiveData}"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="No Active Account!!!"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/clEnableChat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:visible="@{testChatFragmentViewModel.enableChatLiveData}"
+            >
+
+            <RelativeLayout
+                android:id="@+id/elementBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                >
+
+                <Button
+                    android:id="@+id/btnSend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Send"
+                    android:layout_alignBaseline="@+id/edMsg"
+                    android:enabled="@{testChatFragmentViewModel.enableBtnSend}"
+                    android:layout_alignParentRight="true"
+                    />
+                <EditText
+                    android:id="@+id/edMsg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/btnSend"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="Message"
+                    android:text="@={testChatFragmentViewModel._edMsg}"
+                    android:textColor="@color/secondaryTextColor"
+                    android:inputType="text"
+                    android:maxLines="3"
+                    />
+            </RelativeLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adapter="@{testChatViewAdapter}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_alignParentTop="true"
+                android:layout_above="@+id/elementBottom"
+                />
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+</layout>
+
+

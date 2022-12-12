@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.lgt.cwm">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <uses-sdk tools:overrideLibrary="ccom.vanniktech.emoji.ios"/>
+
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+<!--  android:usesCleartextTraffic="true" allow to use http connection  -->
+    <application
+        android:name=".CwmApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:usesCleartextTraffic="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Cwmadndroid"
+        android:requestLegacyExternalStorage="true"
+
+        tools:targetApi="31">
+
+        <!-- [START fcm_default_icon] -->
+        <!-- Set custom default icon. This is used when no icon is set for incoming notification messages.
+             See README(https://goo.gl/l4GJaQ) for more. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_app_name" />
+        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/primaryColor" />
+        <!-- [END fcm_default_icon] -->
+
+        <!-- [START fcm_default_channel] -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/notification_default_channel_id" />
+        <!-- [END fcm_default_channel] -->
+
+        <activity
+            android:name=".activity.test.TestMainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+
+
+        <activity
+            android:name=".activity.testchat.TestChatActivity"
+            android:parentActivityName=".activity.test.TestMainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true">
+        </activity>
+
+        <activity android:name=".activity.media.MediaPreviewActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden"
+            android:launchMode="singleTask"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize">
+        </activity>
+
+
+        <activity
+            android:name=".activity.home.MainActivity"
+            android:theme="@style/Theme.Cwmadndroid.NoActionBar"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+<!--        android:allowEmbedded="true"-->
+<!--        android:documentLaunchMode="always"-->
+<!--        android:resizeableActivity="true"-->
+        <activity
+            android:name=".activity.conversation.ConversationActivity"
+            android:theme="@style/Theme.Cwmadndroid.NoActionBar"
+            android:exported="true"
+            >
+        </activity>
+
+        <receiver
+            android:name="com.lgt.cwm.receiver.MarkMessageReadReceiver"
+            android:exported="false">
+        </receiver>
+
+        <receiver
+            android:name="com.lgt.cwm.receiver.NotificationMessageDismissReceiver"
+            android:exported="false">
+        </receiver>
+
+        <service android:name=".business.firebase.MyFirebaseMessagingService"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".ui.components.voice.VoiceNotePlaybackService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+
+        <!--        <service android:name=".business.ws.WSService"-->
+<!--            android:stopWithTask="false"/>-->
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths">
+            </meta-data>
+        </provider>
+
+<!--        https://developer.android.com/topic/libraries/architecture/workmanager/advanced/custom-configuration#remove-default-->
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            tools:node="remove">
+        </provider>
+
+    </application>
+
+</manifest>

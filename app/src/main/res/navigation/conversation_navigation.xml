@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/conversation_navigation"
+    app:startDestination="@id/conversationFragment">
+    <fragment
+        android:id="@+id/conversationFragment"
+        android:name="com.lgt.cwm.activity.conversation.fragments.ConversationFragment"
+        android:label="ConversationFragment" >
+        <action
+            android:id="@+id/action_conversationFragment_to_conversationSettingsFragment"
+            app:destination="@id/conversationSettingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/conversationSettingsFragment"
+        android:name="com.lgt.cwm.activity.conversation.fragments.ConversationSettingsFragment"
+        android:label="ConversationSettingsFragment" />
+</navigation>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/action_call"
+        android:title="Call"
+        android:icon="@drawable/ic_menu_call_white"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/action_search"
+        android:title="Search"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_media"
+        android:title="Media"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_mute"
+        android:title="Mute"
+        app:showAsAction="never" />
+</menu>

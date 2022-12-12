@@ -1,0 +1,95 @@
+syntax = "proto3";
+
+package grpcCWMPb;
+
+import "cwm/cwmSignalMsg.proto";
+
+
+enum OS_TYPE {
+  ANDROID = 0;
+  IOS = 1;
+  WEBAPP = 2;
+}
+
+message DeviceInfo {
+  string deviceName = 1;
+  string imei = 2;
+  string manufacturer = 3;
+  OS_TYPE os = 4;
+  string osVersion = 5;
+  optional string sessionId = 6;
+}
+
+//-------------------CONTACT--------------------------------//
+
+enum CONTACT_SYNC_TYPE {
+  ADD = 0;
+  UPDATE = 1;
+  REMOVE = 2;
+}
+
+message ContactInfo {
+  string contactId = 1;
+  string name = 2;
+  string phoneFull = 3;
+  optional CONTACT_SYNC_TYPE syncType = 4;
+  optional string userId = 5;
+  optional string username = 6;
+  optional string userAvatar = 7;
+  optional string firstName = 8;
+  optional string lastName = 9;
+}
+
+//-------------------SEARCH USER--------------------------------//
+
+message SearchUserInfo {
+  string phoneFull = 1;
+  string userId = 2;
+  string username = 3;
+  string userAvatar = 4;
+  string firstName = 5;
+  string lastName = 6;
+}
+
+//-------------------GROUP THREAD--------------------------------//
+message ThreadParticipantInfo {
+  string phoneFull = 1;
+  string userId = 2;
+  string username = 3;
+  string userAvatar = 4;
+  string firstName = 5;
+  string lastName = 6;
+}
+
+message GroupThreadInfo {
+  string threadId = 1;
+  cwmSignalMsgPb.SIGNAL_THREAD_TYPE threadType = 2;
+  string groupName = 3;
+  string creator = 4;
+  repeated string participants = 5;
+  repeated string admins = 6;
+  int64 lastModified = 7;
+  repeated ThreadParticipantInfo participantInfos = 8;
+}
+
+
+//-------------------MEDIA MSG--------------------------------//
+message MediaMsgInfo {
+  string msgId = 1;
+  cwmSignalMsgPb.SIGNAL_MEDIA_TYPE mediaType = 2;
+  string checksum = 3;
+}
+
+//-------------------PUSH TOKEN--------------------------------//
+enum PUSH_TOKEN_SERVICE_TYPE {
+  FCM = 0;
+  APNS_VOIP = 1; //voip
+  APNS_REMOTE = 2; //remote notification
+}
+
+message PushTokenInfo {
+  PUSH_TOKEN_SERVICE_TYPE pushTokenServiceType = 1;
+  string pushtokenID = 2;
+  string appid = 3;
+  string bundleid = 4;
+}

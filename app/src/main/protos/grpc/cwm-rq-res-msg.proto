@@ -1,0 +1,116 @@
+syntax = "proto3";
+
+package grpcCWMPb;
+
+import "grpc/cwm-model.proto";
+import "cwm/cwmSIP.proto";
+
+
+//-------------------FIRST SYNC MSG AFTER REGISTER ACC--------------------------------//
+message InitialSyncMsgRequest { // Get 100 newest msg of all thread that user participate
+}
+
+message InitialSyncMsgResponse {
+  GroupThreadInfo groupThreadInfo = 1;
+  repeated cwmSIPPb.CWMRequest msg = 2;
+}
+
+//-------------------SEND MSG--------------------------------//
+message SendMsgRequest { // Get 100 newest msg of all thread that user participate
+  cwmSIPPb.CWMRequest msg = 1;
+}
+
+message SendMsgResponse {
+  cwmSIPPb.CWMResponse msgResponse = 1;
+}
+
+
+//-------------------CONFIRM RECEIVED MSGs--------------------------------//
+message ConfirmReceivedMsgsRequest {
+  repeated string msgIds = 1;
+}
+
+message ConfirmReceivedMsgsResponse {
+  repeated string msgIds = 1;
+}
+
+
+//-------------------GET ALL UNRECEIVE MSG--------------------------------//
+message FetchAllUnreceivedMsgRequest {
+  optional int64 fromDate = 1;
+  optional int64 toDate = 2;
+}
+
+message FetchAllUnreceivedMsgResponse {
+  cwmSIPPb.CWMRequest msg = 1;
+}
+
+//-------------------GET OLD MSG OF THREAD--------------------------------//
+message FetchOldMsgOfThreadRequest {
+  string threadId = 1;
+  int64 toDate = 2;
+  optional int64 limit = 3;
+}
+
+message FetchOldMsgOfThreadResponse {
+  cwmSIPPb.CWMRequest msg = 1;    //CWMRequest
+}
+
+//-------------------DELETE MSG--------------------------------//
+message DeleteMsgsOfThreadRequest {
+  string threadId = 1;
+  repeated string msgIds = 2;
+  bool deleteForAllMembers = 3;
+}
+
+message DeleteMsgsOfThreadResponse {
+  int64 count = 1;
+}
+
+//-------------------CLEAR ALL MSG OF THREAD--------------------------------//
+message ClearAllMsgOfThreadRequest {
+  string threadId = 1;
+  bool deleteForAllMembers = 2;
+}
+
+message ClearAllMsgOfThreadResponse {
+  int64 count = 1;
+}
+
+//-------------------DELETE SOLO THREAD--------------------------------//
+message DeleteSoloThreadRequest {
+  string threadId = 1;
+  bool deleteForAllMembers = 2;
+}
+
+message DeleteSoloThreadResponse {
+  int64 count = 1;
+}
+
+
+//-------------------UPLOAD MEDIA MSG--------------------------------//
+message UploadMediaMsgRequest {
+  oneof data {    // We use a "oneof" field here because the first request will only contain the metadata, next requests will contain chunk_data
+    MediaMsgInfo mediaMsgInfo = 1;
+    bytes chunk_data = 2;
+  };
+}
+
+message UploadMediaMsgResponse {
+  string fileId = 1;
+  string fileName = 2;
+  int64 fileSize = 3;
+  string checkSum = 4;
+  string msgId = 5;
+}
+
+
+//-------------------DOWNLOAD MEDIA FILE--------------------------------//
+message DownloadMediaMsgRequest {
+  string fileId = 1;
+  string msgId = 2;
+}
+
+message DownloadMediaMsgResponse {
+  bytes chunk_data = 1;
+}

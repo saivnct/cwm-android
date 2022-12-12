@@ -1,0 +1,117 @@
+syntax = "proto3";
+
+package grpcCWMPb;
+
+import "grpc/cwm-model.proto";
+
+//-------------------CREATE ACCOUNT--------------------------------//
+message CreatAccountRequest {
+  string phone = 1;
+  string countryCode = 2;
+}
+
+message CreatAccountResponse {
+  string phoneFull = 1;
+  int32 authenCodeTimeOut = 2;
+  string numberPrefix = 3;
+}
+
+//-------------------VERIFY AUTHENCODE--------------------------------//
+
+message VerifyAuthencodeRequest {
+  string phone = 1;
+  string countryCode = 2;
+  DeviceInfo deviceInfo = 3;
+  string authencode = 4;
+}
+
+message VerifyAuthencodeResponse {
+  bytes passEnc = 1;
+  bytes iv = 2;
+  DeviceInfo deviceInfo = 3;
+  string nonce = 4;
+  string firstName = 5;
+  string lastName = 6;
+  string userName = 7;
+}
+
+//-------------------LOGIN--------------------------------//
+
+message LoginRequest {
+  string phoneFull = 1;
+  string sessionId = 2;
+  string nonce = 3;
+  string response = 4;
+}
+
+message LoginResponse {
+  string jwt = 1;
+  int32 jwtTTL = 2; //minutes
+}
+
+//-------------------SYNC CONTACT--------------------------------//
+
+message SyncContactRequest {
+  ContactInfo contactInfo = 3;
+}
+
+message SyncContactResponse {
+  ContactInfo contactInfo = 3;
+}
+
+
+//-------------------UPDATE PROFILE--------------------------------//
+message UpdateProfileRequest {
+  string firstName = 1;
+  string lastName = 2;
+}
+
+message UpdateProfileResponse {
+  string firstName = 1;
+  string lastName = 2;
+}
+
+//-------------------UPDATE USERNAME--------------------------------//
+message UpdateUsernameRequest {
+  string userName = 1;
+}
+
+message UpdateUsernameResponse {
+  string userName = 1;
+}
+
+//-------------------SEARCH BY USERNAME--------------------------------//
+message SearchByUsernameRequest {
+  string userName = 1;
+}
+
+message SearchByUsernameResponse {
+  repeated SearchUserInfo searchUserInfos = 1;
+}
+
+//-------------------SEARCH BY PHONEFULL--------------------------------//
+message SearchByPhoneFullRequest {
+  string phoneFull = 1;
+}
+
+message SearchByPhoneFullResponse {
+  repeated SearchUserInfo searchUserInfos = 1;
+}
+
+//-------------------SEARCH BY PHONEFULL--------------------------------//
+message FindByListPhoneFullRequest {
+  repeated string phoneFulls = 1;
+}
+
+message FindByListPhoneFullResponse {
+  repeated SearchUserInfo searchUserInfos = 1;
+}
+
+//-------------------UPDATE PUSH TOKEN--------------------------------//
+message UpdatePushTokenRequest {
+  PushTokenInfo pushTokenInfo = 1;
+}
+
+message UpdatePushTokenResponse {
+  PushTokenInfo pushTokenInfo = 1;
+}

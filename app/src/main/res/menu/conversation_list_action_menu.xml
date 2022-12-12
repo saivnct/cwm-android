@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<!--    <item android:id="@+id/action_mute"-->
+<!--        android:title="Mute"-->
+<!--        android:icon="@drawable/ic_menu_mute_white"-->
+<!--        app:showAsAction="always"/>-->
+    <item
+        android:id="@+id/action_delete"
+        android:icon="@drawable/ic_menu_delete_white"
+        android:title="Delete"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_select_all"
+        android:title="Select all"
+        android:icon="@drawable/ic_menu_select_all_white"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_clear_history"
+        android:title="Clear History"
+        app:showAsAction="never" />
+<!--    <item-->
+<!--        android:id="@+id/action_archive"-->
+<!--        android:title="Archive"-->
+<!--        app:showAsAction="never" />-->
+</menu>

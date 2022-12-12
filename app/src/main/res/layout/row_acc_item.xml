@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="account"
+            type="com.lgt.cwm.db.entity.Account" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rlitem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background">
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:text="@{account.phoneFull}"
+            />
+
+        <Button
+            android:id="@+id/btnActive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Active"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            app:accActive="@{account.active}"
+            />
+
+        <Button
+            android:id="@+id/btnTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Test"
+            android:layout_toLeftOf="@+id/btnActive"
+            android:layout_margin="10dp"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/tertiaryBackground"
+            android:layout_below="@+id/btnActive"
+            />
+
+    </RelativeLayout>
+</layout>
+
+
+

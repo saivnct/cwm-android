@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/compose_background"
+                android:clipChildren="false"
+                android:clipToPadding="false">
+
+                <LinearLayout
+                    android:id="@+id/compose_bubble"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/compose_background"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="vertical">
+
+                    <com.lgt.cwm.ui.conversation.QuoteView
+                        android:id="@+id/quote_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="6dp"
+                        android:visibility="gone"
+                        app:message_type="preview"
+                        app:quote_colorPrimary="#1B1B1D"
+                        app:quote_colorSecondary="#1B1B1D"
+                        tools:visibility="visible" />
+
+                    <com.lgt.cwm.ui.conversation.LinkPreviewView
+                        android:id="@+id/link_preview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="6dp"
+                        android:visibility="gone"
+                        app:linkpreview_type="compose" />
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/layoutCompose"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/imageButtonEmoji"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_gravity="center"
+                                android:background="@color/transparent"
+                                android:contentDescription="Emoji"
+                                app:srcCompat="@drawable/ic_emoji" />
+
+                            <com.lgt.cwm.ui.conversation.ComposeText
+                                android:id="@+id/editTextCompose"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="1"
+                                android:background="@color/transparent"
+                                android:hint="Type a message"
+                                android:imeOptions="actionSend"
+                                android:inputType="textAutoCorrect|textMultiLine"
+                                android:maxLength="2000"
+                                android:maxLines="5"
+                                android:minHeight="48dp"
+                                android:textSize="18sp" />
+
+                            <com.lgt.cwm.ui.components.HidingLinearLayout
+                                android:id="@+id/quick_attachment_toggle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="right|end"
+                                android:clipChildren="false"
+                                android:clipToPadding="false">
+
+                                <ImageButton
+                                    android:id="@+id/imageButtonAttachFile"
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:layout_gravity="center"
+                                    android:background="@color/transparent"
+                                    android:contentDescription="Attach"
+                                    app:srcCompat="@drawable/ic_attach_file" />
+
+                                <com.lgt.cwm.ui.components.MicrophoneRecorderView
+                                    android:id="@+id/recorder_view"
+                                    android:layout_width="24dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginEnd="12dp"
+                                    android:clipChildren="false"
+                                    android:clipToPadding="false">
+
+                                    <include layout="@layout/microphone_recorder_view" />
+                                </com.lgt.cwm.ui.components.MicrophoneRecorderView>
+
+                            </com.lgt.cwm.ui.components.HidingLinearLayout>
+
+                        </LinearLayout>
+                    </FrameLayout>
+                </LinearLayout>
+
+                <include layout="@layout/recording_layout" />
+            </FrameLayout>
+
+            <com.lgt.cwm.ui.components.AnimatingToggle
+                android:id="@+id/button_toggle"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/circle_tintable">
+
+                <ImageButton
+                    android:id="@+id/imageButtonSend"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Send"
+                    android:padding="12dp"
+                    android:scaleType="fitCenter"
+                    android:tint="@color/core_white"
+                    app:srcCompat="@drawable/ic_send_36" />
+
+            </com.lgt.cwm.ui.components.AnimatingToggle>
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

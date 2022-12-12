@@ -1,0 +1,184 @@
+syntax = "proto3";
+
+package cwmSignalMsgPb;
+
+enum SIGNAL_THREAD_TYPE {
+  SOLO = 0;
+  GROUP = 1;
+}
+
+enum SIGNAL_IM_TYPE {
+  TYPING = 0;
+  SEENSTATE = 1;
+  EVENT = 2;
+  GROUP_THREAD_NOTIFICATION = 3;
+  IM = 4;
+  CONTACT = 5;
+  EMOTICON = 6;
+  URL = 7;
+  MULTIMEDIA = 8;
+  FORWARD = 9;
+}
+
+message SignalMessage{
+  string msgId = 1;
+  SIGNAL_THREAD_TYPE threadType = 2;
+  SIGNAL_IM_TYPE imType = 3;
+  string threadId = 4; // SOLO: threadId = phoneA_phoneB, GROUP: GroupId
+  string replyMsgId = 5;
+  int64 msgDate = 6;
+  int64 serverDate = 7; //msg Date on server
+  string checksum = 8;
+  repeated string seenby = 9;
+  bytes data = 10;
+}
+
+//-------------------SIGNAL_TYPING_MSG--------------------------------//
+enum SIGNAL_TYPING_MSG_TYPE {
+  M_TYPING = 0;
+  M_UNTYPING = 1;
+}
+
+message SignalTypingMessage{
+  SIGNAL_TYPING_MSG_TYPE type = 1;
+}
+
+//-------------------SIGNAL_FORWARD_MSG--------------------------------//
+message SignalForwardMessage{
+  string msgId = 1;
+  string from = 2;
+  string fromFirstName = 3;
+  string fromLastName = 4;
+  string fromUserName = 5;
+  string threadId = 6;
+  SIGNAL_THREAD_TYPE threadType = 7;
+  SIGNAL_IM_TYPE imType = 8;
+  string checksum = 9;
+  bytes data = 10;
+}
+
+//-------------------SIGNAL_URL_MSG--------------------------------//
+message SignalURLMessage{
+  string url = 1;
+  string urlTitle = 2;
+  string urlDescription = 3;
+  string urlThumbnail = 4;
+  bytes data = 5;
+}
+
+
+
+//-------------------SIGNAL_MULTIMEDIA_MSG--------------------------------//
+enum SIGNAL_MEDIA_TYPE {
+  VIDEO = 0;
+  AUDIO = 1;
+  IMAGE = 2;
+  DOC = 3;
+  FILE = 4;
+}
+
+enum SIGNAL_MEDIA_FILE_STATUS {
+  SENDING = 0;
+  SEND_FAILED = 1;
+  SENT = 2;
+  DOWNLOADING = 3;
+  DOWNLOAD_FAILED = 4;
+  DOWNLOADED = 5;
+}
+
+message MultimediaFileInfo{
+  string fileId = 1;
+  string fileName = 2;
+  int64 fileSize = 3;
+  SIGNAL_MEDIA_TYPE mediaType =4;
+  string mimeType = 5;
+  string checksum = 6;
+  //on local client side
+  string fileUri = 7;
+  SIGNAL_MEDIA_FILE_STATUS fileStatus = 8;
+
+}
+
+message SignalMultimediaMessage{
+  repeated MultimediaFileInfo multimediaFileInfos = 1;
+}
+
+
+
+//-------------------SIGNAL_SEENSTATE_MSG--------------------------------//
+enum SIGNAL_SEENSTATE_MSG_TYPE {
+  DELIVER = 0;
+  SEEN = 1;
+}
+
+message SignalSeenStateMessage{
+  SIGNAL_SEENSTATE_MSG_TYPE seenStateType = 1;
+  repeated string msgId = 2;
+}
+
+//-------------------SIGNAL_GROUP_THREAD_NOTIFICATION_MSG--------------------------------//
+enum SIGNAL_GROUP_THREAD_NOTIFICATION_MSG_TYPE {
+  GROUP_THREAD_CREATED = 0;
+  GROUP_THREAD_LEAVE = 1;
+  GROUP_THREAD_ADD_USERS = 2;
+  GROUP_THREAD_REMOVE_USERS = 3;
+  GROUP_THREAD_PROMOTE_ADMIN = 4;
+  GROUP_THREAD_REVOKE_ADMIN = 5;
+  GROUP_THREAD_CHANGE_NAME = 6;
+}
+
+
+message SignalGroupThreadNotificationMessage{
+  SIGNAL_GROUP_THREAD_NOTIFICATION_MSG_TYPE notificationType = 1;
+  string threadId = 2;
+  string executor = 3;
+  repeated string targetMembers = 4;
+  //group info
+  string groupName = 5;
+  string creator = 6;
+  repeated string participants = 7;
+  repeated string admins = 8;
+  int64 lastModified = 9;
+}
+
+
+//-------------------SIGNAL_EVENT_MSG--------------------------------//
+enum SIGNAL_EVENT_MSG_TYPE {
+  UPDATE_CONTACT_OTT = 0;
+  MSG_DELETE = 1;
+  THREAD_CLEAR_MSG = 2;
+  THREAD_DELETED = 3;
+}
+
+message SignalEventMessage{
+  SIGNAL_EVENT_MSG_TYPE eventType = 1;
+  bytes data = 2;
+}
+
+
+message SignalEventMessageUpdateContactOTT{    //-------------------SIGNAL_EVENT_MSG -> UPDATE_CONTACT_OTT--------------------------------//
+  string phoneFull = 1;
+  string userId = 2;
+  string username = 3;
+  string userAvatar = 4;
+  string firstName = 5;
+  string lastName = 6;
+}
+
+message SignalEventMessageMsgDelete{    //-------------------SIGNAL_EVENT_MSG -> MSG_DELETE--------------------------------//
+  string threadId = 1;
+  repeated string msgIds = 2;
+  bool deleteForAllMembers = 3;
+}
+
+message SignalEventMessageThreadClearMsg{    //-------------------SIGNAL_EVENT_MSG -> THREAD_CLEAR_MSG--------------------------------//
+  string threadId = 1;
+  bool deleteForAllMembers = 2;
+}
+
+message SignalEventMessageThreadDeleted{    //-------------------SIGNAL_EVENT_MSG -> THREAD_DELETED--------------------------------//
+  string threadId = 1;
+  bool deleteForAllMembers = 2;
+}
+
+

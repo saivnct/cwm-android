@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="dashboardViewModel" type="com.lgt.cwm.activity.test.fragments.dashboard.TestDashboardViewModel"/>
+
+        <variable
+            name="testAccsViewAdapter"
+            type="com.lgt.cwm.activity.test.fragments.dashboard.adapter.TestAccsViewAdapter" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        >
+
+        <Button
+            android:id="@+id/btnTestHttpAPI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="call HTTP"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            />
+
+        <Button
+            android:id="@+id/btnTestGrpcAPI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="call GRPC"
+            android:layout_alignBaseline="@+id/btnTestHttpAPI"
+            android:layout_toRightOf="@+id/btnTestHttpAPI"
+            android:layout_marginLeft="10dp"
+            />
+
+        <Button
+            android:id="@+id/btnCreateUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create"
+            android:layout_below="@+id/btnTestHttpAPI"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnTestHttpAPI"
+            android:layout_toRightOf="@+id/btnCreateUser"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            >
+            <EditText
+                android:id="@+id/edCountryCode"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="country code"
+                android:inputType="text"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@={dashboardViewModel._edCountryCode}"
+                android:textColor="@color/secondaryTextColor"
+                app:error="@{dashboardViewModel.edCountryCodeErr ? @string/invalid_country_code : ``}" />
+
+            <EditText
+                android:id="@+id/edPhone"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="phone"
+                android:inputType="text"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@={dashboardViewModel._edPhone}"
+                android:textColor="@color/secondaryTextColor"
+                app:error="@{dashboardViewModel.edPhoneErr ? @string/invalid_phone_number : ``}" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnVerifyAuthenCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verify"
+            android:layout_below="@+id/btnCreateUser"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            />
+
+        <EditText
+            android:id="@+id/edAuthenCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btnVerifyAuthenCode"
+            android:layout_toRightOf="@+id/btnVerifyAuthenCode"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="Authen Code"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@={dashboardViewModel._edAuthenCode}"
+            android:textColor="@color/secondaryTextColor" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adapter="@{testAccsViewAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_below="@+id/btnVerifyAuthenCode"
+            android:layout_marginTop="10dp"
+            />
+
+        <ProgressBar
+            android:id="@+id/spinner"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_centerInParent="true"
+             />
+
+    </RelativeLayout>
+</layout>

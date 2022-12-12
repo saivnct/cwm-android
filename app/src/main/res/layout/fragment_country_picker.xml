@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="countryPickerViewModel" type="com.lgt.cwm.activity.home.fragments.account.register.CountryPickerViewModel"/>
+        <variable name="countryCodeListAdapter" type="com.lgt.cwm.activity.home.fragments.account.adapter.CountryCodeListAdapter" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/country_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:drawableStart="@drawable/ic_search"
+            android:hint="Search"
+            android:textSize="20sp"
+            android:minHeight="48dp"
+            android:text=""
+            app:drawableTint="#858080" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listCountry"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adapter="@{countryCodeListAdapter}"
+            tools:listitem="@layout/country_code_item"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            />
+
+    </LinearLayout>
+</layout>

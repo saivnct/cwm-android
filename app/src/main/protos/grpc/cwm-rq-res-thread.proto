@@ -1,0 +1,93 @@
+syntax = "proto3";
+
+package grpcCWMPb;
+
+import "grpc/cwm-model.proto";
+
+//-------------------CREATE GROUP THREAD--------------------------------//
+message CreateGroupThreadRequest {
+  string groupName = 1;
+  repeated string participants = 2;
+}
+
+message CreateGroupThreadResponse {
+    GroupThreadInfo groupThreadInfo = 1;
+}
+
+//-------------------CHECK GROUP THREAD INFO--------------------------------//
+message CheckGroupThreadInfoRequest {
+  string threadId = 1;
+}
+
+message CheckGroupThreadInfoResponse {
+  GroupThreadInfo groupThreadInfo = 1;
+}
+
+//-------------------CHANGE GROUP THREAD NAME--------------------------------//
+message ChangeGroupThreadNameRequest {
+  string threadId = 1;
+  string groupName = 2;
+}
+
+message ChangeGroupThreadNameResponse {
+  GroupThreadInfo groupThreadInfo = 1;
+}
+
+
+//-------------------ADD GROUP THREAD PARTICIPANT--------------------------------//
+message AddGroupThreadParticipantRequest {
+  string threadId = 1;
+  repeated string newParticipants = 2;
+}
+
+message AddGroupThreadParticipantResponse {
+  GroupThreadInfo groupThreadInfo = 1;
+}
+
+//-------------------REMOVE GROUP THREAD PARTICIPANT--------------------------------//
+message RemoveGroupThreadParticipantRequest {
+  string threadId = 1;
+  repeated string removeParticipants = 2;
+}
+
+message RemoveGroupThreadParticipantResponse {
+  GroupThreadInfo groupThreadInfo = 1;
+}
+
+//-------------------PROMOTE GROUP THREAD ADMIN--------------------------------//
+message PromoteGroupThreadAdminRequest {
+  string threadId = 1;
+  string phoneFull = 2;
+}
+
+message PromoteGroupThreadAdminResponse {
+  GroupThreadInfo groupThreadInfo = 1;
+}
+
+//-------------------REVOKE GROUP THREAD ADMIN--------------------------------//
+message RevokeGroupThreadAdminRequest {
+  string threadId = 1;
+  string phoneFull = 2;
+}
+
+message RevokeGroupThreadAdminResponse {
+  GroupThreadInfo groupThreadInfo = 1;
+}
+
+//-------------------LEAVE GROUP THREAD--------------------------------//
+message LeaveGroupThreadRequest {
+  string threadId = 1;
+}
+
+message LeaveGroupThreadResponse {
+  GroupThreadInfo groupThreadInfo = 1;
+}
+
+//-------------------DELETE AND LEAVE GROUP THREAD--------------------------------//
+message DeleteAndLeaveGroupThreadRequest {
+  string threadId = 1;
+}
+
+message DeleteAndLeaveGroupThreadResponse {
+  GroupThreadInfo groupThreadInfo = 1;
+}
